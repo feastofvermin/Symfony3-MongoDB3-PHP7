@@ -1,10 +1,10 @@
-#Dockerized Symfony3, MongoDB3, PHP7, Redis
+# Dockerized Symfony3, MongoDB3, PHP7, Redis
 
-Basic Symfony3 setup with no example application using Nginx, MongoDB3, PHP7-FPM and Redis.
+Basic docker-based Symfony3 setup with no example application using Nginx, MongoDB3, PHP7-FPM and Redis.
 
-## Running
+## Get started
 
-Run docker-compose :
+Clone, then run docker-compose inside the project's directory :
 
     $ docker-compose up -d
 
@@ -12,7 +12,7 @@ Run composer inside the web container :
 
     $ docker exec -u www-data web composer update
 
-Navigate to http://127.0.0.1:8080/. If you see a blank page, it works. This setup has no example application, only a working configuration. From here, it is up to you ;)
+Navigate to http://127.0.0.1:8080/. If you see a blank page, it works. This setup has no example application, only a working configuration. From here, it is up to you.
 
 
 ## Notes

@@ -14,12 +14,12 @@
 /code/var/sessions/*
 !/code/var/sessions/.gitkeep
 !/code/var/SymfonyRequirements.php
-/app/composer.lock
 /nbproject
 /code/nbproject
 /code/core
 /code/**/*.php~
 /code/**/*.cache
+/code/composer.lock
 /code/composer-cache
 /code/.composer
 /code/app/results.xml
