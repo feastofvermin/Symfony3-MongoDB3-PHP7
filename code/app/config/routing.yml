@@ -1,0 +1,13 @@
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+# FOSUserBundle's routing
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+# NelmioApiDocBundle's routing
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc

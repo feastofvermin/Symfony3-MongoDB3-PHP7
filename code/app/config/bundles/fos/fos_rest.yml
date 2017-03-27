@@ -1,0 +1,46 @@
+fos_rest:
+    disable_csrf_role: ROLE_API
+    routing_loader:
+        default_format: json
+        include_format: false
+    param_fetcher_listener: force
+    body_converter:
+        enabled: true
+        validate: true
+        validation_errors_argument: validationErrors            
+    body_listener:
+        decoders:
+            json: fos_rest.decoder.jsontoform
+        array_normalizer:
+            forms: true
+    serializer:
+        serialize_null: true
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    routing_loader:
+        default_format: json            
+    view:
+        mime_types:
+            json: ['application/json', 'application/json;version=1.0', 'application/json;version=1.1', 'application/json;version=1.2']
+        view_response_listener: force
+        formats:
+            xml:  false
+            json: true
+        templating_formats:
+            html: true
+        failed_validation: HTTP_UNPROCESSABLE_ENTITY
+        empty_content: HTTP_NO_CONTENT
+        #media_type:
+        #    version_regex: '/(v|version)=(?P<version>[0-9\.]+)/'
+    format_listener:
+        rules:
+            # Everything
+            - { path: ^/, priorities: [ json ], fallback_format: json, prefer_extension: true }
+    exception:
+        enabled: true
+        codes:
+            # Note: Status codes in Symfony\Component\HttpFoundation\Response
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': HTTP_NOT_FOUND # Symfony normal routing exception
+        messages:
+            'Symfony\Component\Routing\Exception\ResourceNotFoundException': true

@@ -1,0 +1,14 @@
+fos_user:
+    db_driver:      mongodb
+    firewall_name:  main
+    user_class:     UserBundle\Document\User
+
+    #group:
+    #    group_class: UserBundle\Entity\Group
+
+    service:
+        mailer: fos_user.mailer.twig_swift
+
+    from_email:
+        address:     noreply@example.com
+        sender_name: Example
